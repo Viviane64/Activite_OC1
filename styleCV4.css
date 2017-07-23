@@ -1,0 +1,142 @@
+ /* Code CSS de mise en page du CV HTML*/
+ /* Author : Viviane SCHOMMERS - prof : OpenClassRoom*/
+
+
+        /*Définition des polices utilisées dans la page statique*/
+@font-face 
+{
+    font-family: 'droid_sansregular';
+    src: url('DroidSans-webfont.eot');
+    src: url('DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('DroidSans-webfont.woff') format('woff'),
+         url('DroidSans-webfont.ttf') format('truetype'),
+         url('DroidSans-webfont.svg#droid_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'learning_curve_proregular';
+    src: url('LearningCurve_OT-webfont.eot');
+    src: url('LearningCurve_OT-webfont.eot?#iefix') format('embedded-opentype'),
+         url('LearningCurve_OT-webfont.woff') format('woff'),
+         url('LearningCurve_OT-webfont.ttf') format('truetype'),
+         url('LearningCurve_OT-webfont.svg#learning_curve_proregular') format('svg');
+    font-weight: normal;
+	font-style: normal;
+}
+
+        /*définition de l'image de fond du corps de la page*/
+body
+{
+    background-image: url("Images/sable.jpg");  /*une image en fond*/
+	background-attachment: fixed;               /*cette image est fixe dans la page*/
+	background-repeat: no-repeat;               /*pas de répétition*/
+	background-size: cover;                     /*l'image couvre tout l'espace disponible*/
+}
+
+		/*en-tête sur l'image des galets*/
+#header
+{
+	display: inline-block;  /*les conteneurs sont alignés*/
+	width: 95%;             /*sur une largeur de 95%*/
+	min-width: 200px;       /*avec une largeur minimum*/
+	background-image: url("Images/galets.jpg"); /*il y a une image de fond*/
+	background-repeat: no-repeat;               /*qui ne se répète pas*/
+	background-size: 100%;                      /*et qui occupe 100% de la largeur*/
+}
+#header span
+{
+	background-color: rgba(255, 217, 185, 0.4);  /*couleur de fond du texte TITRE*/
+}
+#devise 
+{
+	text-shadow: 0px -1px 1px lightyellow;  /*mise en forme du texte de la devise*/
+}
+h1, h1 + p
+{
+    text-align: center; /*le contenu des conteneurs est centré*/
+}
+img
+{
+    border: 1px black ridge;    /*bordure de l'image*/
+	border-radius: 4px 0px 4px 2px; /*arrondis de la bordure aux 4 coins*/
+	box-shadow: -5px 5px 10px lightyellow;  /*ombrage de l'image : àgauche, en bas, l'épaisseur, la couleur*/
+	width: 13.5%;   /*largeur de l'image*/
+	height: 13.5%;  /*hauteur de l'image*/
+	float: right;   /*alignement à droite*/
+	margin-bottom: 1%; /*marge du bas*/
+	margin-right: 1%; /*marge de droite*/
+}
+
+		/*définition de la police pour les titres h1 à h3*/
+h1, h2, h3
+{
+    font-family: 'droid_sansregular', 'Arial', sans-serif;
+}
+
+		/*couleur de la police*/
+h2
+{
+    color: #6E4A46;
+}
+
+/*s'applique aux 3 sections*/
+section
+{
+    display: inline-block;	/*les 3 sections s'affichent côte à côte*/
+    vertical-align: top;	/*les 3 sections se callent en haut*/
+    width: 30%;				/*chaque section occupe 30% de la largeur*/
+    margin-right: 2%;		/*chaque section à une marge droite de 2%*/
+	background-color: rgba(255, 217, 185, 0.7); /*couleur de fond (3 valeurs + transparance)*/
+	margin-top: 2%;			/*marge du haut à 2%*/
+}
+
+/*les parties #bande_gauche et #contenu*/
+#bande_gauche, #contenu
+{
+    display: inline-block;  /*affichage en ligne*/
+    vertical-align: top;    /*alignement verticale en haut*/
+}
+
+/*partie de gauche*/
+#bande_gauche
+{   
+    width: 10%;         /*largeur*/
+    margin-right: 3%;   /*marge de droite*/
+    height: 500px;      /*hauteur du box*/
+    background-color: rgba(255, 128, 0, 0.7); /*couleur de fond (+transparence)*/
+	box-shadow: 2px 2px 5px #f9e9cf;    /*ombre du box*/
+    border-radius: 5px; /*arrondi de la bordure*/
+	text-align: left;   /*alignement du texte*/
+	padding: 5px;       /*marges intérieures*/
+}
+#bande_gauche h1
+{
+	font-size: 1.2em; /*taille du texte de la bande de gauche*/
+}
+
+/*partie centrale et principale*/
+#contenu
+{
+    width: 85%; /*occupe 85% de l'espace total*/
+}
+
+/*partie de gauche qui se place en bas*/
+footer
+{
+	display: none; /*le footer reprend les éléments du bloc de gauche mais les masque par défaut*/
+}
+
+@media all and (max-width: 900px)
+{
+	#contenu	{ width: auto; }
+	#header		{ width: auto; display: block; }
+	#bande_gauche{ display: none; }
+	section		{ display: block; width: auto; }
+	footer		{display: block; 
+				background-color: rgba(255, 128, 0, 0.4); 
+				font-family: 'learning_curve_proregular', Arial, serif; 
+                font-size: 2em; 
+                font-weight: bold;}
+	footer h3	{font-size: 0.8em; }
+}
